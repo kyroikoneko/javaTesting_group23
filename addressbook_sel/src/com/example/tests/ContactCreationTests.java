@@ -8,20 +8,15 @@ public class ContactCreationTests extends TestBase {
 	openMainPage();
     goToNewContactPage();
     ContactData contact = new ContactData();
-    /* сюда можно сделать рандомайзер, 
-    но или делать рандом для каждого поля с соответствущей
-    валидацией, или сделать один рандомайзер. который будет писать чепуху в 
-    каждое поле. в сомнениях, поэтому оставила как есть, благо поля в адрессной книге
-    неуникальные.
-    */
-    contact.firstName = "Natalie";
-    contact.secondName = "Bianko";
+
+    contact.firstName = NameRandomizer();
+    contact.secondName = NameRandomizer();
     contact.postAddress = "North Pole";
-    contact.homePhoneNum = "3332211";
-    contact.mobilePhonNum = "2221133";
-    contact.workPhoneNum = "1112233";
-    contact.postPrimary = "blabl@bl.vl";
-    contact.postSecondary = "blblabl@vl";
+    contact.homePhoneNum = phoneRandomizer();
+    contact.mobilePhonNum = phoneRandomizer();
+    contact.workPhoneNum = phoneRandomizer();
+    contact.postPrimary = emailRandomizer();
+    contact.postSecondary = emailRandomizer();
     contact.day ="18";
     contact.month = "January";
     contact.year = "1982";

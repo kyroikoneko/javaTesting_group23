@@ -4,6 +4,7 @@ import static org.junit.Assert.fail;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
@@ -140,5 +141,25 @@ public class TestBase {
 	protected void goToNewContactPage() {
 		driver.findElement(By.linkText("add new")).click();
 	}
+
+	protected String phoneRandomizer() {
+		  String charset = ("123456789");
+		  String phoneN = RandomStringUtils.random(7,charset);
+		  phoneN = "+7000"+phoneN;
+		  return phoneN;	  
+	  }
+
+	protected String emailRandomizer() {
+		   String charset = ("abcdefghijklmopqrstuvwxyz");
+		   String emailN = RandomStringUtils.random(7,charset);
+		  emailN = emailN +"@blabla.bl";
+		  return emailN;	  
+	  }
+
+	protected String NameRandomizer() {
+		   String charset = ("abcdefghijklmopqrstuvwxyz");
+		   String name = RandomStringUtils.random(7,charset);
+		   return name;	  
+	  }
 
 }
