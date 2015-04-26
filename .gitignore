@@ -1,6 +1,9 @@
 *.class
 
-
+.addressbook_sel/settings/**
+.addressbook_sel/bin/**
+.addressbook_sel/test-output/**
+.addressbook_sel/metadata/**
 
 .settings/**
 bin/**
