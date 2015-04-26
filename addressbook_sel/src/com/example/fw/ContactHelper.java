@@ -2,6 +2,7 @@ package com.example.fw;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+
 import com.example.tests.ContactData;
 
 public class ContactHelper  extends HelperBase{
