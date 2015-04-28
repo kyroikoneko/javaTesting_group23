@@ -37,12 +37,38 @@ public class GroupHelper extends HelperBase {
 	private void selectGroupByIndex(int index) {
 		click(By.xpath("//input[@name='selected[]'][" + index+"]"));
 	}
+	
+	private void selectAllGroups() {
+		
+		int count = clicks(By.xpath("//input[@name='selected[]']"));
+		if (count != 0){
+		for (int i=1;i<=count;i++){
+		click(By.xpath("//input[@name='selected[]'][" + i+"]"));
+			}
+		}
+	}
+	
+	
+	private void selectSomeGroups(int index) {
+		
+		int count = clicks(By.xpath("//input[@name='selected[]']"));
+		if (count != 0 && index < count){
+		for (int b=1;b<=index;b++){
+		click(By.xpath("//input[@name='selected[]'][" + b+"]"));
+			}
+		}
+		else {
+			
+			for (int b=1;b<count;b++){
+				click(By.xpath("//input[@name='selected[]'][" + b+"]"));
+					}
+		}
+	}
 
 	public void initGroupModification(int index) {
 		selectGroupByIndex(index);
 		click(By.name("edit"));
 
-	
 	}
 
 	public void submitGroupModification() {
@@ -50,4 +76,16 @@ public class GroupHelper extends HelperBase {
 		click(By.name("update"));
 		
 	}
+
+	public void deleteGroups() {
+		selectAllGroups();
+		click(By.name("delete"));
+		
+	}
+	
+	public void deleteSomeGroups(int index) {
+		selectSomeGroups(index);
+		click(By.name("delete"));
+		}
+
 }

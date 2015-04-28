@@ -57,4 +57,13 @@ public  boolean acceptNextAlert = true;
 		new Select(driver.findElement(locator)).selectByVisibleText(text);
 		}
 	}
+	
+	
+	protected int clicks(By locator) {
+		
+		int count = driver.findElements(locator).size(); 
+		return count;
+		}
+
+	
 }
