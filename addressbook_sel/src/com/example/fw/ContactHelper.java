@@ -24,26 +24,35 @@ public class ContactHelper  extends HelperBase{
 	public void submitContactCreation() {
 		 click(By.name("submit"));
 	}
+	
+	public void updateContactCreation() {
+		 click(By.xpath("//*[@id='content']/form[1]/input[11]"));
+	}
+	
+	public void deleteContactCreation() {
+		 click(By.xpath("//*[@id='content']/form[2]/input[2]"));
+	}
+	
 
 	public String phoneRandomizer() {
 		  String charset = ("123456789");
 		  String phoneN = RandomStringUtils.random(7,charset);
 		  phoneN = "+7000"+phoneN;
 		  return phoneN;	  
-	  }
+	 }
 
 	public String emailRandomizer() {
 		   String charset = ("abcdefghijklmopqrstuvwxyz");
 		   String emailN = RandomStringUtils.random(7,charset);
 		  emailN = emailN +"@blabla.bl";
 		  return emailN;	  
-	  }
+	 }
 
 	public String NameRandomizer() {
 		   String charset = ("abcdefghijklmopqrstuvwxyz");
 		   String name = RandomStringUtils.random(7,charset);
 		   return name;	  
-	  }
+	 }
 
 	public void fillContactDetails(ContactData contact) {
 		type(By.name("firstname"), contact.firstName);
@@ -66,5 +75,16 @@ public class ContactHelper  extends HelperBase{
 	    selectByText(By.name("bday"), contact.day);
 	    selectByText(By.name("bmonth"), contact.month);
 	    selectByText(By.name("new_group"), contact.group);
+	}
+	
+	public void openEditPage(int index)
+	{
+		//проверяем наличие списков с помощью функции кликс, еденица - потому что чекбокс выделить все присутствует изначально. 
+		//в проверке так же убрала возможность ввести заведомо больший индекс ^^
+		int count = clicks(By.xpath("//input[@type='checkbox']"));
+		if (count != 1 && index < count){
+			index = index+1; //шапка находится по тому же пути и имеет индекс 1, соответственно все сдвигается
+		click(By.xpath("//*[@id='maintable']/tbody/tr["+index+"]/td[7]/a/img"));
+		}
 	}
 }
