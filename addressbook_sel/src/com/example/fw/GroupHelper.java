@@ -30,12 +30,19 @@ public class GroupHelper extends HelperBase {
 	}
 
 	public void deleteGroup(int index) {
+		int count = clicks(By.xpath("//input[@name='selected[]']"));
+		if (count != 0 && index <= count){
 		selectGroupByIndex(index);
 		click(By.name("delete"));
+		}
 	}
 
 	private void selectGroupByIndex(int index) {
+		
+		int count = clicks(By.xpath("//input[@name='selected[]']"));
+		if (count != 0 && index <= count){
 		click(By.xpath("//input[@name='selected[]'][" + index+"]"));
+		}
 	}
 	
 	private void selectAllGroups() {
