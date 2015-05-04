@@ -1,6 +1,11 @@
 package com.example.fw;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.example.tests.GroupData;
 
@@ -94,5 +99,23 @@ public class GroupHelper extends HelperBase {
 		selectSomeGroups(index);
 		click(By.name("delete"));
 		}
+
+	public List<GroupData> getGroups() {
+		List<GroupData> groups = new ArrayList<GroupData>();
+		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
+		for (WebElement checkbox : checkboxes) {
+		GroupData group = new GroupData(); 	
+		String title = checkbox.getAttribute("title");
+		group.groupName = title.substring("Select(".length(), title.length()-")".length());
+		groups.add(group);
+		}
+		return groups;
+	}
+	
+	public String CharacterRandomizer(int index) {
+		   String charset = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmopqrstuvwxyz");
+		   String name = RandomStringUtils.random(index,charset);
+		   return name;	  
+	 }
 
 }
