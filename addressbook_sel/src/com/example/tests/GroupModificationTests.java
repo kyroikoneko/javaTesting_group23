@@ -22,7 +22,7 @@ public class GroupModificationTests extends TestBase {
 	    int index = rnd.nextInt(oldList.size()-1);
 	    
 	    //actions
-	    app.getGroupHelper().initGroupModification(index);
+	    app.getGroupHelper().initGroupModification(1);
 		app.getGroupHelper().fillGroupForm(group);
 		app.getGroupHelper().submitGroupModification();
 		app.getGroupHelper().returnToGroupPage();
@@ -31,9 +31,10 @@ public class GroupModificationTests extends TestBase {
 	    List<GroupData> newList = app.getGroupHelper().getGroups();
 	    
 	    //merge states
-	    oldList.remove(index);
-	    oldList.add(group);
-	    Collections.sort(oldList);
+	    oldList.remove(index); //удалился
+	    oldList.add(group); //заменился новым
+	    Collections.sort(oldList); //rfrjuj xthnf
+	    Collections.sort(newList);//nen ndjhbncz fl&&&&
 	    assertEquals(newList,oldList); 
 		
 	}

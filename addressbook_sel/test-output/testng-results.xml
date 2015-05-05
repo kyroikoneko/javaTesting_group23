@@ -2,28 +2,35 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5798" started-at="2015-05-05T17:59:16Z" finished-at="2015-05-05T17:59:22Z">
+  <suite name="Default suite" duration-ms="6332" started-at="2015-05-05T19:20:50Z" finished-at="2015-05-05T19:20:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5798" started-at="2015-05-05T17:59:16Z" finished-at="2015-05-05T17:59:22Z">
-      <class name="com.example.tests.GroupRemovalTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.GroupRemovalTests@2d6d8735]" name="setUp" is-config="true" duration-ms="2749" started-at="2015-05-05T21:59:16Z" finished-at="2015-05-05T21:59:19Z">
+    <test name="Default test" duration-ms="6332" started-at="2015-05-05T19:20:50Z" finished-at="2015-05-05T19:20:56Z">
+      <class name="com.example.tests.GroupModificationTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.GroupModificationTests@2d6d8735]" name="setUp" is-config="true" duration-ms="2794" started-at="2015-05-05T23:20:50Z" finished-at="2015-05-05T23:20:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="deleteSomeGroup()[pri:0, instance:com.example.tests.GroupRemovalTests@2d6d8735]" name="deleteSomeGroup" duration-ms="2893" started-at="2015-05-05T21:59:19Z" finished-at="2015-05-05T21:59:22Z">
+        <test-method status="FAIL" signature="modifySomeGroup(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupModificationTests@2d6d8735]" name="modifySomeGroup" duration-ms="3368" started-at="2015-05-05T23:20:53Z" data-provider="randomValidGroupGenerator" finished-at="2015-05-05T23:20:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[GroupData [groupName=, header=XIrwwodCuNvUluiHDrvmAFiTFquTooTCiYieTNsslQPKuPHTJRCaYvVNAIashlUhRfewgrmwUurHsVBKSvDuOirFIBtQrLUkRICx, footer=HOvSFIcBFWfKIttmIridBqfUUIEHQpXAWgCjCYQyJvKcfaQmukfuegffQcjSXxVOhCPFEOaWTtYNmSdixeqjKsmMoWWcEFeKjZcI]]]>
+              </value>
+            </param>
+          </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [23] but found [21]]]>
+              <![CDATA[Lists differ at element [1]: GroupData [groupName=ffgLceMCFR, header=null, footer=null] != GroupData [groupName=foRODuspjY, header=null, footer=null] expected [GroupData [groupName=ffgLceMCFR, header=null, footer=null]] but found [GroupData [groupName=foRODuspjY, header=null, footer=null]]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [23] but found [21]
+              <![CDATA[java.lang.AssertionError: Lists differ at element [1]: GroupData [groupName=ffgLceMCFR, header=null, footer=null] != GroupData [groupName=foRODuspjY, header=null, footer=null] expected [GroupData [groupName=ffgLceMCFR, header=null, footer=null]] but found [GroupData [groupName=foRODuspjY, header=null, footer=null]]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
 	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:370)
-	at org.testng.Assert.assertEquals(Assert.java:380)
-	at com.example.tests.GroupRemovalTests.deleteSomeGroup(GroupRemovalTests.java:30)
+	at org.testng.Assert.assertEquals(Assert.java:549)
+	at org.testng.Assert.assertEquals(Assert.java:514)
+	at com.example.tests.GroupModificationTests.modifySomeGroup(GroupModificationTests.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -53,12 +60,12 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteSomeGroup -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.GroupRemovalTests@2d6d8735]" name="tearDown" is-config="true" duration-ms="156" started-at="2015-05-05T21:59:22Z" finished-at="2015-05-05T21:59:22Z">
+        </test-method> <!-- modifySomeGroup -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.GroupModificationTests@2d6d8735]" name="tearDown" is-config="true" duration-ms="161" started-at="2015-05-05T23:20:56Z" finished-at="2015-05-05T23:20:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.example.tests.GroupRemovalTests -->
+      </class> <!-- com.example.tests.GroupModificationTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

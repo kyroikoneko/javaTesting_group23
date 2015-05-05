@@ -32,7 +32,7 @@ public class TestBase {
 	@DataProvider
 	public Iterator<Object[]> randomValidGroupGenerator(){
 		List<Object[]> list = new ArrayList<Object[]>();
-		for(int i =0;i<5;i++){
+		for(int i =0;i<1;i++){
 			GroupData group = new GroupData();
 			group.groupName = generateRandomString(10);
 			group.footer = generateRandomString(100);

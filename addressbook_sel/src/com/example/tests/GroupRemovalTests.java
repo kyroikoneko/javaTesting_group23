@@ -27,8 +27,6 @@ public class GroupRemovalTests extends TestBase {
 	    List<GroupData> newList = app.getGroupHelper().getGroups();
 	    
 	    //merge states
- assertEquals(newList.size(), oldList.size()+1);
-	    
 	    oldList.remove(index);
 	    Collections.sort(oldList);
 	    assertEquals(newList,oldList);
