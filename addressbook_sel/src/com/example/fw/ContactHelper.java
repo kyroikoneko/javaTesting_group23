@@ -1,10 +1,13 @@
 package com.example.fw;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.example.tests.ContactData;
-
 public class ContactHelper  extends HelperBase{
 	
 	
@@ -67,11 +70,6 @@ public class ContactHelper  extends HelperBase{
 		type(By.name("phone2"), contact.secondaryPhone);
 		type(By.name("byear"), contact.year);
 		
-		type(By.name("lastname"), contact.secondName);
-		type(By.name("lastname"), contact.secondName);
-		type(By.name("lastname"), contact.secondName);
-		type(By.name("lastname"), contact.secondName);
-
 	    selectByText(By.name("bday"), contact.day);
 	    selectByText(By.name("bmonth"), contact.month);
 	    selectByText(By.name("new_group"), contact.group);
@@ -86,5 +84,19 @@ public class ContactHelper  extends HelperBase{
 			index = index+1; //шапка находится по тому же пути и имеет индекс 1, соответственно все сдвигается
 		click(By.xpath("//*[@id='maintable']/tbody/tr["+index+"]/td[7]/a/img"));
 		}
+
+	}
+	
+	//начало треша
+	public List<ContactData> getContacts() {
+		List<ContactData> contacts = new ArrayList<ContactData>();
+		List<WebElement> lastNames = driver.findElements(By.xpath(".//*[@id='maintable']/tbody/tr/td[2]")); //"//tr[@name='entry']/td[2]"
+		for (WebElement lastName : lastNames) {
+			ContactData contact = new ContactData(); 
+			 String data = lastName.getText();
+			contact.secondName = data;
+			contacts.add(contact);
+		}
+		return contacts;
 	}
 }

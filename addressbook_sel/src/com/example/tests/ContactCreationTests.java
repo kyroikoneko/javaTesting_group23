@@ -1,31 +1,32 @@
 package com.example.tests;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+import static org.testng.Assert.assertEquals;
 import org.testng.annotations.Test;
 
 public class ContactCreationTests extends TestBase {
  
-  @Test
-  public void testContactCreation() throws Exception {
+  @Test(dataProvider = "randomValidContactGenerator")
+  public void testContactCreation(ContactData contact) throws Exception {
 	app.getNavigationHelper().openMainPage();
     app.getContactHelper().goToNewContactPage();
-    ContactData contact = new ContactData();
+    //старый список - начало треша
+   List<ContactData> oldList = app.getContactHelper().getContacts();
+ //  Random rnd = new Random();
+//  int index = rnd.nextInt(oldList.size() - 1); 
 
-    contact.firstName = app.getContactHelper().NameRandomizer();
-    contact.secondName = app.getContactHelper().NameRandomizer();
-    contact.postAddress = "North Pole";
-    contact.homePhoneNum = app.getContactHelper().phoneRandomizer();
-    contact.mobilePhonNum = app.getContactHelper().phoneRandomizer();
-    contact.workPhoneNum = app.getContactHelper().phoneRandomizer();
-    contact.postPrimary = app.getContactHelper().emailRandomizer();
-    contact.postSecondary = app.getContactHelper().emailRandomizer();
-    contact.day ="18";
-    contact.month = "January";
-    contact.year = "1982";
-    contact.group = "primaryGroup";
-    contact.secondaryPostAddress = "South Pole";
-    contact.secondaryPhone = "+42300011122";
+    //action
 	app.getContactHelper().fillContactDetails(contact);
     app.getContactHelper().submitContactCreation();
     app.getContactHelper().returnToMainPage();
-  }
-  
+    
+ // новый список
+ //   List<ContactData> newList = app.getContactHelper().getContacts();
+
+    // merge states
+  //  oldList.remove(index);
+ //   Collections.sort(oldList);
+ //   assertEquals(newList, oldList);
+   }
 }

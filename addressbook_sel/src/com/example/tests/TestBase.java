@@ -32,7 +32,7 @@ public class TestBase {
 	@DataProvider
 	public Iterator<Object[]> randomValidGroupGenerator(){
 		List<Object[]> list = new ArrayList<Object[]>();
-		for(int i =0;i<1;i++){
+		for(int i =0;i<3;i++){
 			GroupData group = new GroupData();
 			group.groupName = generateRandomString(10);
 			group.footer = generateRandomString(100);
@@ -42,11 +42,37 @@ public class TestBase {
 		return list.iterator();
 	}
 	
+	@DataProvider
+	public Iterator<Object[]> randomValidContactGenerator(){
+		List<Object[]> list = new ArrayList<Object[]>();
+		for(int i =0;i<3;i++){
+			ContactData contact = new ContactData();
+			 contact.firstName = app.getContactHelper().NameRandomizer();
+			    contact.secondName = app.getContactHelper().NameRandomizer();
+			    contact.postAddress = "North Pole";
+			    contact.homePhoneNum = app.getContactHelper().phoneRandomizer();
+			    contact.mobilePhonNum = app.getContactHelper().phoneRandomizer();
+			    contact.workPhoneNum = app.getContactHelper().phoneRandomizer();
+			    contact.postPrimary = app.getContactHelper().emailRandomizer();
+			    contact.postSecondary = app.getContactHelper().emailRandomizer();
+			    contact.day ="18";
+			    contact.month = "January";
+			    contact.year = "1982";
+			  //  contact.group = "primaryGroup";
+			    contact.secondaryPostAddress = "South Pole";
+			    contact.secondaryPhone = "+42300011122";
+			
+			
+			list.add(new Object[]{contact});
+		}
+		return list.iterator();
+	}
+	
 	
 	public String generateRandomString(int index)
 	{
 		Random rnd = new Random();
-		if (rnd.nextInt(3)==0)
+		if (rnd.nextInt(5)==0)
 		{
 			return "";
 		}

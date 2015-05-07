@@ -1,6 +1,9 @@
 package com.example.fw;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class NavigationHelper extends HelperBase {
 
@@ -10,6 +13,8 @@ public class NavigationHelper extends HelperBase {
 
 	public void openMainPage() {
 	   driver.get(manager.baseUrl + "/addressbookv4.1.4");
+		List<WebElement> lastNames = driver.findElements(By.xpath(".//*[@id='maintable']/tbody/tr/td[2]"));
+		System.out.println(lastNames);
 	}
 
 	public void goToGroupPage() {
