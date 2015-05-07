@@ -1,5 +1,8 @@
 package com.example.tests;
 
+import static org.testng.Assert.assertEquals;
+
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -21,6 +24,16 @@ public class ContactModificationsTests extends TestBase{
 		app.getContactHelper().fillContactDetails(contact);
 		app.getContactHelper().updateContactCreation();
 		app.getContactHelper().returnToMainPage();
+		
+		 // save new state
+	    List<ContactData> newList = app.getContactHelper().getContacts();
+	    
+	    //merge states
+	    oldList.remove(index); //удалился
+	    oldList.add(contact); //заменился новым
+	    Collections.sort(oldList); //
+	    Collections.sort(newList);//
+	    assertEquals(newList,oldList); 
 		
 	  }
 

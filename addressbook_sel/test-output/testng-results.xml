@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="5" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16986" started-at="2015-05-07T18:56:48Z" finished-at="2015-05-07T18:57:05Z">
+  <suite name="Default suite" duration-ms="36678" started-at="2015-05-07T20:37:15Z" finished-at="2015-05-07T20:37:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16986" started-at="2015-05-07T18:56:48Z" finished-at="2015-05-07T18:57:05Z">
-      <class name="com.example.tests.ContactModificationsTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.ContactModificationsTests@2d6d8735]" name="setUp" is-config="true" duration-ms="2886" started-at="2015-05-07T22:56:48Z" finished-at="2015-05-07T22:56:51Z">
+    <test name="Default test" duration-ms="36678" started-at="2015-05-07T20:37:15Z" finished-at="2015-05-07T20:37:52Z">
+      <class name="com.example.tests.ContactCreationTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.ContactCreationTests@2d6d8735]" name="setUp" is-config="true" duration-ms="3077" started-at="2015-05-08T00:37:15Z" finished-at="2015-05-08T00:37:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testContactModifications(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactModificationsTests@2d6d8735]" name="testContactModifications" duration-ms="4662" started-at="2015-05-07T22:56:51Z" data-provider="randomValidContactGenerator" finished-at="2015-05-07T22:56:56Z">
+        <test-method status="FAIL" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@2d6d8735]" name="testContactCreation" duration-ms="6477" started-at="2015-05-08T00:37:18Z" data-provider="randomValidContactGenerator" finished-at="2015-05-08T00:37:24Z">
           <params>
             <param index="0">
               <value>
@@ -19,10 +19,49 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Lists differ at element [24]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Lists differ at element [24]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:549)
+	at org.testng.Assert.assertEquals(Assert.java:514)
+	at com.example.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testContactModifications -->
-        <test-method status="PASS" signature="testContactModifications(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactModificationsTests@2d6d8735]" name="testContactModifications" duration-ms="4612" started-at="2015-05-07T22:56:56Z" data-provider="randomValidContactGenerator" finished-at="2015-05-07T22:57:00Z">
+        </test-method> <!-- testContactCreation -->
+        <test-method status="FAIL" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@2d6d8735]" name="testContactCreation" duration-ms="6633" started-at="2015-05-08T00:37:24Z" data-provider="randomValidContactGenerator" finished-at="2015-05-08T00:37:31Z">
           <params>
             <param index="0">
               <value>
@@ -30,10 +69,49 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Lists differ at element [4]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Lists differ at element [4]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:549)
+	at org.testng.Assert.assertEquals(Assert.java:514)
+	at com.example.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testContactModifications -->
-        <test-method status="PASS" signature="testContactModifications(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactModificationsTests@2d6d8735]" name="testContactModifications" duration-ms="4658" started-at="2015-05-07T22:57:00Z" data-provider="randomValidContactGenerator" finished-at="2015-05-07T22:57:05Z">
+        </test-method> <!-- testContactCreation -->
+        <test-method status="FAIL" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@2d6d8735]" name="testContactCreation" duration-ms="6662" started-at="2015-05-08T00:37:31Z" data-provider="randomValidContactGenerator" finished-at="2015-05-08T00:37:38Z">
           <params>
             <param index="0">
               <value>
@@ -41,14 +119,153 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Lists differ at element [7]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Lists differ at element [7]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:549)
+	at org.testng.Assert.assertEquals(Assert.java:514)
+	at com.example.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testContactModifications -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.ContactModificationsTests@2d6d8735]" name="tearDown" is-config="true" duration-ms="160" started-at="2015-05-07T22:57:05Z" finished-at="2015-05-07T22:57:05Z">
+        </test-method> <!-- testContactCreation -->
+        <test-method status="FAIL" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@2d6d8735]" name="testContactCreation" duration-ms="6834" started-at="2015-05-08T00:37:38Z" data-provider="randomValidContactGenerator" finished-at="2015-05-08T00:37:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.example.tests.ContactData@1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Lists differ at element [7]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Lists differ at element [7]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:549)
+	at org.testng.Assert.assertEquals(Assert.java:514)
+	at com.example.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testContactCreation -->
+        <test-method status="FAIL" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@2d6d8735]" name="testContactCreation" duration-ms="6854" started-at="2015-05-08T00:37:45Z" data-provider="randomValidContactGenerator" finished-at="2015-05-08T00:37:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.example.tests.ContactData@1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Lists differ at element [15]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Lists differ at element [15]: com.example.tests.ContactData@1 != com.example.tests.ContactData@1 expected [com.example.tests.ContactData@1] but found [com.example.tests.ContactData@1]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:549)
+	at org.testng.Assert.assertEquals(Assert.java:514)
+	at com.example.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testContactCreation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.ContactCreationTests@2d6d8735]" name="tearDown" is-config="true" duration-ms="141" started-at="2015-05-08T00:37:51Z" finished-at="2015-05-08T00:37:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.example.tests.ContactModificationsTests -->
+      </class> <!-- com.example.tests.ContactCreationTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

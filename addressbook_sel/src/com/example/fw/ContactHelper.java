@@ -90,7 +90,7 @@ public class ContactHelper  extends HelperBase{
 	//начало треша
 	public List<ContactData> getContacts() {
 		List<ContactData> contacts = new ArrayList<ContactData>();
-		List<WebElement> lastNames = driver.findElements(By.xpath(".//*[@id='maintable']/tbody/tr/td[2]")); //"//tr[@name='entry']/td[2]"
+		List<WebElement> lastNames = driver.findElements(By.xpath("//tr[@name='entry']/td[2]"));
 		for (WebElement lastName : lastNames) {
 			ContactData contact = new ContactData(); 
 			 String data = lastName.getText();

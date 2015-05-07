@@ -28,7 +28,7 @@ public class GroupRemovalTests extends TestBase {
 	    
 	    //merge states
 	    oldList.remove(index);
-	    Collections.sort(oldList);
+	    Collections.sort(oldList); 
 	    assertEquals(newList,oldList);
 	}
 

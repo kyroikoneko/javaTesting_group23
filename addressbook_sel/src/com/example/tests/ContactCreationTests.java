@@ -13,23 +13,26 @@ public class ContactCreationTests extends TestBase {
 	
     //старый список - начало треша
 	   List<ContactData> oldList = app.getContactHelper().getContacts();
-    app.getContactHelper().goToNewContactPage();
+   
+	   
+	   app.getContactHelper().goToNewContactPage();
 
 
-  Random rnd = new Random();
-  int index = rnd.nextInt(oldList.size() - 1); 
-
-    //action
+   //action
 	app.getContactHelper().fillContactDetails(contact);
     app.getContactHelper().submitContactCreation();
     app.getContactHelper().returnToMainPage();
     
  // новый список
- //   List<ContactData> newList = app.getContactHelper().getContacts();
+    List<ContactData> newList = app.getContactHelper().getContacts();
 
     // merge states
-  //  oldList.remove(index);
- //   Collections.sort(oldList);
- //   assertEquals(newList, oldList);
+    oldList.add(contact);
+    Collections.sort(oldList);
+    assertEquals(newList, oldList);
+    
+    
+    
+    
    }
 }
