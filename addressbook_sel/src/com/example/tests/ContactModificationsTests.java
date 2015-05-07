@@ -1,17 +1,23 @@
 package com.example.tests;
 
+import java.util.List;
+import java.util.Random;
+
 import org.testng.annotations.Test;
 
 public class ContactModificationsTests extends TestBase{
 	
-	  @Test
-	  public void testContactModifications() throws Exception {
+	  @Test(dataProvider = "randomValidContactGenerator")
+	  public void testContactModifications(ContactData contact) throws Exception {
 		app.getNavigationHelper().openMainPage();
-		app.getContactHelper().openEditPage(1);
+		
+		   List<ContactData> oldList = app.getContactHelper().getContacts();
+		
+		  Random rnd = new Random();
+		  int index = rnd.nextInt(oldList.size() - 1); 
+		app.getContactHelper().openEditPage(index);
 
-	    ContactData contact = new ContactData();
-	    contact.firstName = "Natalechka";
-	    contact.secondName = "Bianochka";
+
 		app.getContactHelper().fillContactDetails(contact);
 		app.getContactHelper().updateContactCreation();
 		app.getContactHelper().returnToMainPage();

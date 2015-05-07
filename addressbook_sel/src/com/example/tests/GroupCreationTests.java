@@ -1,9 +1,7 @@
 package com.example.tests;
 import static org.testng.Assert.assertEquals;
-
 import java.util.Collections;
 import java.util.List;
-
 import org.testng.annotations.Test;
 
 public class GroupCreationTests extends TestBase {
@@ -12,7 +10,7 @@ public class GroupCreationTests extends TestBase {
 		app.getNavigationHelper().openMainPage();
 	    app.getNavigationHelper().goToGroupPage();
 	    
-	    //save old state
+	  //  save old state
 	    List<GroupData> oldList = app.getGroupHelper().getGroups();
 	    
 	    //action
@@ -22,14 +20,14 @@ public class GroupCreationTests extends TestBase {
 	    app.getGroupHelper().submitGroupCreation();
 	    app.getGroupHelper().returnToGroupPage();
 	    
-	    // save new state
+	 //    save new state
 	    List<GroupData> newList = app.getGroupHelper().getGroups();
 	    
 	    //merge states
 	    assertEquals(newList.size(), oldList.size()+1);
 	    
 	    oldList.add(group);
-	    Collections.sort(oldList);
+	   Collections.sort(oldList);
 	    
 	    assertEquals(newList,oldList);
 	  }

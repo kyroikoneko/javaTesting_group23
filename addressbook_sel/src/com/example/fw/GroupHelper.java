@@ -32,6 +32,8 @@ public class GroupHelper extends HelperBase {
 
 	public void returnToGroupPage() {
 		click(By.linkText("group page"));
+		int count = clicks(By.xpath("//input[@name='selected[]']"));
+		 System.out.println(count);
 	}
 
 	public void deleteGroup(int index) {
@@ -92,7 +94,6 @@ public class GroupHelper extends HelperBase {
 	public void deleteGroups() {
 		selectAllGroups();
 		click(By.name("delete"));
-		
 	}
 	
 	public void deleteSomeGroups(int index) {
@@ -117,5 +118,12 @@ public class GroupHelper extends HelperBase {
 		   String name = RandomStringUtils.random(index,charset);
 		   return name;	  
 	 }
+	
+	
+	public int returnCount() {
+		
+		int count = clicks(By.xpath("//input[@name='selected[]']"));
+		return count;
+	}
 
 }

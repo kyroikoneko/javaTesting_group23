@@ -10,11 +10,14 @@ public class ContactCreationTests extends TestBase {
   @Test(dataProvider = "randomValidContactGenerator")
   public void testContactCreation(ContactData contact) throws Exception {
 	app.getNavigationHelper().openMainPage();
-    app.getContactHelper().goToNewContactPage();
+	
     //старый список - начало треша
-   List<ContactData> oldList = app.getContactHelper().getContacts();
- //  Random rnd = new Random();
-//  int index = rnd.nextInt(oldList.size() - 1); 
+	   List<ContactData> oldList = app.getContactHelper().getContacts();
+    app.getContactHelper().goToNewContactPage();
+
+
+  Random rnd = new Random();
+  int index = rnd.nextInt(oldList.size() - 1); 
 
     //action
 	app.getContactHelper().fillContactDetails(contact);
