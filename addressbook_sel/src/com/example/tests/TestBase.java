@@ -45,7 +45,7 @@ public class TestBase {
 	@DataProvider
 	public Iterator<Object[]> randomValidContactGenerator(){
 		List<Object[]> list = new ArrayList<Object[]>();
-		for(int i =0;i<5;i++){
+		for(int i =0;i<1;i++){
 			ContactData contact = new ContactData();
 			 contact.firstName = app.getContactHelper().NameRandomizer();
 			    contact.secondName = app.getContactHelper().NameRandomizer();

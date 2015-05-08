@@ -80,8 +80,8 @@ public class ContactHelper  extends HelperBase{
 		//проверяем наличие списков с помощью функции кликс, еденица - потому что чекбокс выделить все присутствует изначально. 
 		//в проверке так же убрала возможность ввести заведомо больший индекс ^^
 		int count = clicks(By.xpath("//input[@type='checkbox']"));
-		if (count != 1 && index < count){
-			index = index+1; //шапка находится по тому же пути и имеет индекс 1, соответственно все сдвигается
+		if (count != 0 && index <= count){
+			index = index+2; //шапка находится по тому же пути и имеет индекс 1, соответственно все сдвигается
 		click(By.xpath("//*[@id='maintable']/tbody/tr["+index+"]/td[7]/a/img"));
 		}
 
@@ -89,14 +89,14 @@ public class ContactHelper  extends HelperBase{
 	
 	//начало треша
 	public List<ContactData> getContacts() {
-		List<ContactData> contacts = new ArrayList<ContactData>();
-		List<WebElement> lastNames = driver.findElements(By.xpath("//tr[@name='entry']/td[2]"));
-		for (WebElement lastName : lastNames) {
-			ContactData contact = new ContactData(); 
-			 String data = lastName.getText();
-			contact.secondName = data;
-			contacts.add(contact);
-		}
+				List<ContactData> contacts = new ArrayList<ContactData>();
+		List<WebElement> secondNames = driver.findElements(By.xpath("//tr[@name='entry']/td[2]"));
+		for (WebElement secondName : secondNames) {
+		 ContactData contact = new ContactData();
+		 contact.secondName = secondName.getText();
+		// System.out.println("secondNames:    "+secondName.getText());
+		 contacts.add(contact);
+		}		
 		return contacts;
 	}
 }

@@ -33,7 +33,7 @@ public class GroupHelper extends HelperBase {
 	public void returnToGroupPage() {
 		click(By.linkText("group page"));
 		int count = clicks(By.xpath("//input[@name='selected[]']"));
-		 System.out.println(count);
+		// System.out.println(count);
 	}
 
 	public void deleteGroup(int index) {

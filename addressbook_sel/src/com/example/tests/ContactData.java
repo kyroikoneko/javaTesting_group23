@@ -39,10 +39,17 @@ public class ContactData implements Comparable<ContactData> {
 	public ContactData() {
 	}
 
+
+
+	
+	
 	@Override
 	public int hashCode() {
-			int result = 1;
-			return result;
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((secondName == null) ? 0 : secondName.hashCode());
+		return result;
 	}
 
 	@Override
@@ -54,11 +61,6 @@ public class ContactData implements Comparable<ContactData> {
 		if (getClass() != obj.getClass())
 			return false;
 		ContactData other = (ContactData) obj;
-		if (firstName == null) {
-			if (other.firstName != null)
-				return false;
-		} else if (!firstName.equals(other.firstName))
-			return false;
 		if (secondName == null) {
 			if (other.secondName != null)
 				return false;
@@ -66,7 +68,7 @@ public class ContactData implements Comparable<ContactData> {
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public int compareTo(ContactData other) {
 		return this.secondName.toLowerCase().compareTo(other.secondName.toLowerCase());

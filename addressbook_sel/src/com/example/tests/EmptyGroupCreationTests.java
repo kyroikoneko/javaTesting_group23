@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class EmptyGroupCreationTests extends TestBase {
 
-@Test
+//@Test
   public void testEmptyGroupCreation() throws Exception {
 	app.getNavigationHelper().openMainPage();
     app.getNavigationHelper().goToGroupPage();
