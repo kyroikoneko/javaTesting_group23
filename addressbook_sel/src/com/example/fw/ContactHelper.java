@@ -1,5 +1,7 @@
 package com.example.fw;
 
+import static com.example.fw.ContactHelper.CREATION;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,14 +9,52 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import com.example.tests.GroupData;
+import com.example.utils.SortedListOf;
 import com.example.tests.ContactData;
 public class ContactHelper  extends HelperBase{
 	
-	
+	public static boolean CREATION = true;
+	public static boolean MODIFICATION = false;
 
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);
 	}
+	
+	private SortedListOf<ContactData> cachedContacts; 
+  
+ 	public SortedListOf<ContactData> getContacts() { 
+ 		if(cachedContacts == null) { 
+ 			rebuildCache(); 
+ 		} 
+ 		return cachedContacts; 
+ 	} 
+
+private void rebuildCache() { 
+ 		cachedContacts = new SortedListOf<ContactData>(); 
+ 		 
+ 		manager.navigateTo().mainPage(); 
+ 		List<WebElement> secondNames = driver.findElements(By.xpath("//tr[@name='entry']/td[2]"));
+		for (WebElement secondName : secondNames) {
+		
+		 String lastName = secondName.getText();
+		 cachedContacts.add(new ContactData().withSecondName(lastName));
+ 		}		 
+ 	} 
+
+	
+public ContactHelper createContact(ContactData contact, boolean formType) {
+	manager.navigateTo().mainPage();
+	goToNewContactPage();
+	fillContactDetails(contact, CREATION);
+	submitContactCreation();
+	returnToMainPage();
+	rebuildCache(); 
+	return this;
+}
+
+	
+	//*************************************************
 
 	public void goToNewContactPage() {
 		click(By.linkText("add new"));
@@ -57,46 +97,43 @@ public class ContactHelper  extends HelperBase{
 		   return name;	  
 	 }
 
-	public void fillContactDetails(ContactData contact) {
-		type(By.name("firstname"), contact.firstName);
-		type(By.name("lastname"), contact.secondName);
-		type(By.name("address"), contact.postAddress);
-		type(By.name("home"), contact.homePhoneNum);
-		type(By.name("mobile"), contact.mobilePhonNum);
-		type(By.name("work"), contact.workPhoneNum);
-		type(By.name("email"), contact.postPrimary);
-		type(By.name("email2"), contact.postSecondary);
-		type(By.name("address2"), contact.secondaryPostAddress);
-		type(By.name("phone2"), contact.secondaryPhone);
-		type(By.name("byear"), contact.year);
+	public ContactHelper fillContactDetails(ContactData contact, boolean formType) {
+		type(By.name("firstname"), contact.getFirstName());
+		type(By.name("lastname"), contact.getSecondName());
+		type(By.name("address"), contact.getPostAddress());
+		type(By.name("home"), contact.getHomePhoneNum());
+		type(By.name("mobile"), contact.getMobilePhonNum());
+		type(By.name("work"), contact.getWorkPhoneNum());
+		type(By.name("email"), contact.getPostPrimary());
+		type(By.name("email2"), contact.getPostSecondary());
+		type(By.name("address2"), contact.getSecondaryPostAddress());
+		type(By.name("phone2"), contact.getSecondaryPhone());
+		type(By.name("byear"), contact.getYear());
 		
-	    selectByText(By.name("bday"), contact.day);
-	    selectByText(By.name("bmonth"), contact.month);
-	    selectByText(By.name("new_group"), contact.group);
+	    selectByText(By.name("bday"), contact.getDay());
+	    selectByText(By.name("bmonth"), contact.getMonth());
+	  //  selectByText(By.name("new_group"), contact.getGroup());
+	    
+	    if (formType == CREATION) {  
+	    	} else
+	    	{  
+	    		if (driver.findElements(By.name("Group")).size() != 0) {  
+	    		throw new Error("Group selector exists in contact modification form");  
+	    	}  
+	    }  
+
+	    return this;
+	    
 	}
 	
 	public void openEditPage(int index)
 	{
-		//проверяем наличие списков с помощью функции кликс, еденица - потому что чекбокс выделить все присутствует изначально. 
-		//в проверке так же убрала возможность ввести заведомо больший индекс ^^
+
 		int count = clicks(By.xpath("//input[@type='checkbox']"));
 		if (count != 0 && index <= count){
-			index = index+2; //шапка находится по тому же пути и имеет индекс 1, соответственно все сдвигается
+			index = index+2; 
 		click(By.xpath("//*[@id='maintable']/tbody/tr["+index+"]/td[7]/a/img"));
 		}
 
-	}
-	
-	//начало треша
-	public List<ContactData> getContacts() {
-				List<ContactData> contacts = new ArrayList<ContactData>();
-		List<WebElement> secondNames = driver.findElements(By.xpath("//tr[@name='entry']/td[2]"));
-		for (WebElement secondName : secondNames) {
-		 ContactData contact = new ContactData();
-		 contact.secondName = secondName.getText();
-		// System.out.println("secondNames:    "+secondName.getText());
-		 contacts.add(contact);
-		}		
-		return contacts;
 	}
 }

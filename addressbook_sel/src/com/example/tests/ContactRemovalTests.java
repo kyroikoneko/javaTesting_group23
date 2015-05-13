@@ -12,7 +12,7 @@ public class ContactRemovalTests extends TestBase {
 	
 	  @Test
 	  public void testContactRemoval() throws Exception {
-		app.getNavigationHelper().openMainPage();
+		app.navigateTo().mainPage();
 		
 	    //старый список - начало треша
 		   List<ContactData> oldList = app.getContactHelper().getContacts();

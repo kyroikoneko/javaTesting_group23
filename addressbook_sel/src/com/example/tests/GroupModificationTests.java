@@ -8,35 +8,32 @@ import java.util.Random;
 
 import org.testng.annotations.Test;
 
+import com.example.utils.SortedListOf;
+
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertThat;
+
 public class GroupModificationTests extends TestBase {
 
 	@Test(dataProvider = "randomValidGroupGenerator")
 	public void modifySomeGroup(GroupData group)throws Exception
 	{
-		app.getNavigationHelper().openMainPage();
-	    app.getNavigationHelper().goToGroupPage();
-		
 	    //save old state
-	    List<GroupData> oldList = app.getGroupHelper().getGroups();
+		SortedListOf<GroupData> oldList = app.getGroupHelper().getGroups();
 	    Random rnd = new Random(); 
 	    int index = rnd.nextInt(oldList.size()-1);
 	    
 	    //actions
-	    app.getGroupHelper().initGroupModification(index+1);
-		app.getGroupHelper().fillGroupForm(group);
-		app.getGroupHelper().submitGroupModification();
-		app.getGroupHelper().returnToGroupPage();
+	    app.getGroupHelper().modifyGroup(index, group);
+
 		
 		 // save new state
-	    List<GroupData> newList = app.getGroupHelper().getGroups();
+	    SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
 	    
 	    //merge states
-	    oldList.remove(index); //удалился
-	    oldList.add(group); //заменился новым
-	    Collections.sort(oldList); //
-	    Collections.sort(newList);//
-	    assertEquals(newList,oldList); 
-		
+	    
+	    assertThat(newList, equalTo(oldList.without(index).withAdded(group)));
+
 	}
 
 	

@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Cutehome\AppData\Local\Temp\testng-eclipse-106166603\testng-customsuite.xml</span>
+                    <span>C:\Users\Cutehome\AppData\Local\Temp\testng-eclipse--385625024\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.example.tests.AllGroupsRemovalTests" hash-for-method="deleteAllGroup">deleteAllGroup</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.example.tests.ContactCreationTests" hash-for-method="testContactCreation(com.example.tests.ContactData@1f)">testContactCreation(com.example.tests.ContactData@1f)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,25 +116,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.example.tests.AllGroupsRemovalTests</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.example.tests.ContactCreationTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="deleteAllGroup">
-                  </a> <!-- deleteAllGroup -->
-                  <span class="method-name">deleteAllGroup</span>
+                  <a name="testContactCreation(com.example.tests.ContactData@1f)">
+                  </a> <!-- testContactCreation(com.example.tests.ContactData@1f) -->
+                  <span class="method-name">testContactCreation</span>
+                  <span class="parameters">(com.example.tests.ContactData@1f)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [&lt;[com.example.tests.ContactData@1f, com.example.tests.ContactData@1f, com.example.tests.ContactData@1f, com.example.tests.ContactData@c547675f, com.example.tests.ContactData@eda7eaa9, com.example.tests.ContactData@76953f57, com.example.tests.ContactData@269c1461, com.example.tests.ContactData@42834156, com.example.tests.ContactData@4bee2ef8, com.example.tests.ContactData@5a564ca7, com.example.tests.ContactData@9f3723f6, com.example.tests.ContactData@aaf8d119, com.example.tests.ContactData@b140a74f, com.example.tests.ContactData@b5500eee, com.example.tests.ContactData@bef2b59e, com.example.tests.ContactData@c5b7776b, com.example.tests.ContactData@d1a339c9, com.example.tests.ContactData@d7264267, com.example.tests.ContactData@e47e761a, com.example.tests.ContactData@1eb9bb94, com.example.tests.ContactData@526125fe, com.example.tests.ContactData@7815df6d, com.example.tests.ContactData@af86a0d0, com.example.tests.ContactData@db043ac2, com.example.tests.ContactData@ef062e69, com.example.tests.ContactData@11897d89, com.example.tests.ContactData@15072c13, com.example.tests.ContactData@220ee695, com.example.tests.ContactData@23123900, com.example.tests.ContactData@3d6bb836, com.example.tests.ContactData@4979c82c, com.example.tests.ContactData@a7d532d0, com.example.tests.ContactData@e303eabc, com.example.tests.ContactData@119eafbf, com.example.tests.ContactData@203b9fd4, com.example.tests.ContactData@2df9566f, com.example.tests.ContactData@4c9dd962, com.example.tests.ContactData@5ec8f471, com.example.tests.ContactData@8fc6d21c, com.example.tests.ContactData@95495a2e, com.example.tests.ContactData@ecdc5886, com.example.tests.ContactData@ed532870, com.example.tests.ContactData@f0566a7a, com.example.tests.ContactData@f2e3bdba, com.example.tests.ContactData@44ff710, com.example.tests.ContactData@e1e0aef, com.example.tests.ContactData@290f16ed, com.example.tests.ContactData@43f04555, com.example.tests.ContactData@4e4a97a4, com.example.tests.ContactData@5535a592, com.example.tests.ContactData@bff65a0a, com.example.tests.ContactData@c077930c, com.example.tests.ContactData@c19cd285, com.example.tests.ContactData@e0ef9d8c, com.example.tests.ContactData@311d607]&gt;] but found [[com.example.tests.ContactData@1f, com.example.tests.ContactData@1f, com.example.tests.ContactData@1f, com.example.tests.ContactData@c547675f, com.example.tests.ContactData@eda7eaa9, com.example.tests.ContactData@76953f57, com.example.tests.ContactData@269c1461, com.example.tests.ContactData@42834156, com.example.tests.ContactData@4bee2ef8, com.example.tests.ContactData@5a564ca7, com.example.tests.ContactData@9f3723f6, com.example.tests.ContactData@aaf8d119, com.example.tests.ContactData@b140a74f, com.example.tests.ContactData@b5500eee, com.example.tests.ContactData@bef2b59e, com.example.tests.ContactData@c5b7776b, com.example.tests.ContactData@d1a339c9, com.example.tests.ContactData@d7264267, com.example.tests.ContactData@e47e761a, com.example.tests.ContactData@1eb9bb94, com.example.tests.ContactData@526125fe, com.example.tests.ContactData@7815df6d, com.example.tests.ContactData@af86a0d0, com.example.tests.ContactData@db043ac2, com.example.tests.ContactData@ef062e69, com.example.tests.ContactData@11897d89, com.example.tests.ContactData@15072c13, com.example.tests.ContactData@220ee695, com.example.tests.ContactData@23123900, com.example.tests.ContactData@3d6bb836, com.example.tests.ContactData@4979c82c, com.example.tests.ContactData@a7d532d0, com.example.tests.ContactData@e303eabc, com.example.tests.ContactData@119eafbf, com.example.tests.ContactData@203b9fd4, com.example.tests.ContactData@2df9566f, com.example.tests.ContactData@4c9dd962, com.example.tests.ContactData@5ec8f471, com.example.tests.ContactData@8fc6d21c, com.example.tests.ContactData@95495a2e, com.example.tests.ContactData@ecdc5886, com.example.tests.ContactData@ed532870, com.example.tests.ContactData@f0566a7a, com.example.tests.ContactData@f2e3bdba, com.example.tests.ContactData@44ff710, com.example.tests.ContactData@e1e0aef, com.example.tests.ContactData@290f16ed, com.example.tests.ContactData@43f04555, com.example.tests.ContactData@4e4a97a4, com.example.tests.ContactData@5535a592, com.example.tests.ContactData@bff65a0a, com.example.tests.ContactData@c077930c, com.example.tests.ContactData@c19cd285, com.example.tests.ContactData@e0ef9d8c, com.example.tests.ContactData@311d607]]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at com.example.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Cutehome\AppData\Local\Temp\testng-eclipse-106166603\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Cutehome\AppData\Local\Temp\testng-eclipse--385625024\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -143,7 +176,7 @@
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.example.tests.AllGroupsRemovalTests&quot;/&gt;
+      &lt;class name=&quot;com.example.tests.ContactCreationTests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -185,14 +218,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'deleteAllGroup')
-data.setCell(0, 2, 'com.example.tests.AllGroupsRemovalTests')
-data.setCell(0, 3, 61510);
+data.setCell(0, 1, 'testContactCreation')
+data.setCell(0, 2, 'com.example.tests.ContactCreationTests')
+data.setCell(0, 3, 8152);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -218,18 +251,20 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.example.tests.AllGroupsRemovalTests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.example.tests.ContactCreationTests</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">deleteAllGroup</span>
-                <span class="method-start">2811 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testContactCreation(com.example.tests.ContactData@1f)</span>
+                <span class="method-start">3152 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">64321 ms</span>
+                <span class="method-start">11314 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

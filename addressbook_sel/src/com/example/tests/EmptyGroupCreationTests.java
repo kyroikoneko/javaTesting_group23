@@ -10,8 +10,8 @@ public class EmptyGroupCreationTests extends TestBase {
 
 //@Test
   public void testEmptyGroupCreation() throws Exception {
-	app.getNavigationHelper().openMainPage();
-    app.getNavigationHelper().goToGroupPage();
+	app.navigateTo().mainPage();
+    app.navigateTo().groupsPage();
     
     //save old state
     List<GroupData> oldList = app.getGroupHelper().getGroups();

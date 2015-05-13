@@ -1,20 +1,20 @@
 package com.example.tests;
 
 public class ContactData implements Comparable<ContactData> {
-	public String firstName;
-	public String secondName;
-	public String postAddress;
-	public String homePhoneNum;
-	public String mobilePhonNum;
-	public String workPhoneNum;
-	public String postPrimary;
-	public String postSecondary;
-	public String day;
-	public String month;
-	public String year;
-	public String secondaryPostAddress;
-	public String secondaryPhone;
-	public String group;
+	private String firstName;
+	private String secondName;
+	private String postAddress;
+	private String homePhoneNum;
+	private String mobilePhonNum;
+	private String workPhoneNum;
+	private String postPrimary;
+	private String postSecondary;
+	private String day;
+	private String month;
+	private String year;
+	private String secondaryPostAddress;
+	private String secondaryPhone;
+	private String group;
 
 	public ContactData(String firstName, String secondName, String postAddress,
 			String homePhoneNum, String mobilePhonNum, String workPhoneNum,
@@ -72,6 +72,148 @@ public class ContactData implements Comparable<ContactData> {
 	@Override
 	public int compareTo(ContactData other) {
 		return this.secondName.toLowerCase().compareTo(other.secondName.toLowerCase());
+		
+	}
+	
+	public ContactData withName(String firstName) {
+		this.firstName = firstName;
+		return this;
+	}
+	
+	public ContactData withSecondName(String secondName) {
+		this.secondName = secondName;
+		return this;
+	}
+	
+	public ContactData withPostAddress(String postAddress) {
+		this.postAddress = postAddress;
+		return this;
+	}
+	
+	public ContactData withHomePhoneNum(String homePhoneNum) {
+		this.homePhoneNum = homePhoneNum;
+		return this;
+	}
+	
+	public ContactData withMobilePhonNum(String mobilePhonNum) {
+		this.mobilePhonNum = mobilePhonNum;
+		return this;
+	}
+	
+	public ContactData withWorkPhoneNum(String workPhoneNum) {
+		this.workPhoneNum = workPhoneNum;
+		return this;
+	}
+	
+	public ContactData withPostPrimary(String postPrimary) {
+		this.postPrimary = postPrimary;
+		return this;
+	}
+	
+	public ContactData withPostSecondary(String postSecondary) {
+		this.postSecondary = postSecondary;
+		return this;
+	}
+	
+	public ContactData withDay(String day) {
+		this.day = day;
+		return this;
+	}
+	
+	public ContactData withMonth(String month) {
+		this.month = month;
+		return this;
+	}
+	
+	public ContactData withYear(String year) {
+		this.year = year;
+		return this;
+	}
+	
+	public ContactData withGroup(String group) {
+		this.group = group;
+		return this;
+	}
+	
+	public ContactData withSecondaryPostAddress(String secondaryPostAddress) {
+		this.secondaryPostAddress = secondaryPostAddress;
+		return this;
+	}
+	
+	public ContactData withSecondaryPhone(String secondaryPhone) {
+		this.secondaryPhone = secondaryPhone;
+		return this;
+	}
+	
+	//*****************************************************************
+	
+	public String getFirstName() {
+		return  firstName;
+		
+	}
+	
+	public String getSecondName() {
+		return  secondName;
+		
+	}
+	
+	public String getPostAddress() {
+		return  postAddress;
+		
+	}
+	
+	public String getHomePhoneNum() {
+		return  homePhoneNum;
+		
+	}
+	
+	public String getMobilePhonNum() {
+		return  mobilePhonNum;
+		
+	}
+	
+	public String getWorkPhoneNum() {
+		return  workPhoneNum;
+		
+	}
+	
+	public String getPostPrimary() {
+		return  postPrimary;
+		
+	}
+	
+	public String getPostSecondary() {
+		return  postSecondary;
+		
+	}
+	
+	public String getDay() {
+		return  day;
+		
+	}
+	
+	public String getMonth() {
+		return  month;
+		
+	}
+	
+	public String getYear() {
+		return  year;
+		
+	}
+	
+	public String getGroup() {
+		return  group;
+		
+	}
+	
+	public String getSecondaryPostAddress() {
+		return  secondaryPostAddress;
+		
+	}
+	
+	public String getSecondaryPhone() {
+		return  secondaryPhone;
 		
 	}
 	

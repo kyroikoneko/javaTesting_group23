@@ -33,10 +33,11 @@ public class TestBase {
 	public Iterator<Object[]> randomValidGroupGenerator(){
 		List<Object[]> list = new ArrayList<Object[]>();
 		for(int i =0;i<3;i++){
-			GroupData group = new GroupData();
-			group.groupName = generateRandomString(10);
-			group.footer = generateRandomString(100);
-			group.header=generateRandomString(100);
+			GroupData group = new GroupData()
+			.withName(generateRandomString(10))
+			.withFooter(generateRandomString(100))
+			.withHeader(generateRandomString(100));
+		
 			list.add(new Object[]{group});
 		}
 		return list.iterator();
@@ -46,21 +47,21 @@ public class TestBase {
 	public Iterator<Object[]> randomValidContactGenerator(){
 		List<Object[]> list = new ArrayList<Object[]>();
 		for(int i =0;i<1;i++){
-			ContactData contact = new ContactData();
-			 contact.firstName = app.getContactHelper().NameRandomizer();
-			    contact.secondName = app.getContactHelper().NameRandomizer();
-			    contact.postAddress = "North Pole";
-			    contact.homePhoneNum = app.getContactHelper().phoneRandomizer();
-			    contact.mobilePhonNum = app.getContactHelper().phoneRandomizer();
-			    contact.workPhoneNum = app.getContactHelper().phoneRandomizer();
-			    contact.postPrimary = app.getContactHelper().emailRandomizer();
-			    contact.postSecondary = app.getContactHelper().emailRandomizer();
-			    contact.day ="18";
-			    contact.month = "January";
-			    contact.year = "1982";
-			  //  contact.group = "primaryGroup";
-			    contact.secondaryPostAddress = "South Pole";
-			    contact.secondaryPhone = "+42300011122";
+			ContactData contact = new ContactData()
+			.withName(generateRandomString(10))
+			.withSecondName(generateRandomString(10))
+			.withPostAddress(generateRandomString(20))
+			.withHomePhoneNum(app.getContactHelper().phoneRandomizer())
+			.withMobilePhonNum(app.getContactHelper().phoneRandomizer())
+			.withWorkPhoneNum(app.getContactHelper().phoneRandomizer())
+			.withPostPrimary(app.getContactHelper().emailRandomizer())
+			.withPostSecondary(app.getContactHelper().emailRandomizer())
+			.withDay("18")
+			.withMonth("January")
+			.withYear("1992")
+			.withSecondaryPostAddress(generateRandomString(20))
+			.withSecondaryPhone(app.getContactHelper().phoneRandomizer());
+
 			
 			
 			list.add(new Object[]{contact});

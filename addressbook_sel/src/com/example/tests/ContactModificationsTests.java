@@ -7,12 +7,13 @@ import java.util.List;
 import java.util.Random;
 
 import org.testng.annotations.Test;
+import static com.example.fw.ContactHelper.MODIFICATION;;
 
 public class ContactModificationsTests extends TestBase{
 	
 	  @Test(dataProvider = "randomValidContactGenerator")
 	  public void testContactModifications(ContactData contact) throws Exception {
-		app.getNavigationHelper().openMainPage();
+		app.navigateTo().mainPage();
 		
 		   List<ContactData> oldList = app.getContactHelper().getContacts();
 		
@@ -21,7 +22,9 @@ public class ContactModificationsTests extends TestBase{
 		app.getContactHelper().openEditPage(index);
 
 
-		app.getContactHelper().fillContactDetails(contact);
+		app.getContactHelper().fillContactDetails(contact, MODIFICATION);
+		
+		
 		app.getContactHelper().updateContactCreation();
 		app.getContactHelper().returnToMainPage();
 		

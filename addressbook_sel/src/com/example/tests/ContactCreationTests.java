@@ -1,34 +1,34 @@
 package com.example.tests;
 import java.util.Collections;
 import java.util.List;
+import com.example.utils.SortedListOf;
+import static org.hamcrest.Matchers.equalTo;
 import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
+
+import static com.example.fw.ContactHelper.CREATION;
+
+
 
 public class ContactCreationTests extends TestBase {
  
   @Test(dataProvider = "randomValidContactGenerator")
   public void testContactCreation(ContactData contact) throws Exception {
-	app.getNavigationHelper().openMainPage();
+	app.navigateTo().mainPage();
 	
     //старый список - начало треша
-	   List<ContactData> oldList = app.getContactHelper().getContacts();
+	SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
    
 	   
-	   app.getContactHelper().goToNewContactPage();
-
-
-   //action
-	app.getContactHelper().fillContactDetails(contact);
-    app.getContactHelper().submitContactCreation();
-    app.getContactHelper().returnToMainPage();
+	   app.getContactHelper().createContact(contact, CREATION);
     
  // новый список
-    List<ContactData> newList = app.getContactHelper().getContacts();
+	   SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 
     // merge states
-    oldList.add(contact);
-    Collections.sort(oldList);
-    assertEquals(newList, oldList);
+
+    assertEquals(newList,equalTo(oldList.withAdded(contact)));
     
     
     

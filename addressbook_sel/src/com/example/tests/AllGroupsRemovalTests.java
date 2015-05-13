@@ -2,22 +2,20 @@ package com.example.tests;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Collections;
-import java.util.List;
-
 import org.testng.annotations.Test;
 
 public class AllGroupsRemovalTests extends TestBase {
 	
 	@Test
 	public void deleteAllGroup()throws Exception{
-		app.getNavigationHelper().openMainPage();
-	    app.getNavigationHelper().goToGroupPage();
+		app.navigateTo().mainPage();
+	    app.navigateTo().groupsPage();
 	   
 
 
-	    app.getGroupHelper().deleteGroups();
-		app.getGroupHelper().returnToGroupPage();
+	    app.getGroupHelper()
+	    .deleteGroups();
+
 	    int count = app.getGroupHelper().returnCount();
 
 	    assertEquals(count,0);
