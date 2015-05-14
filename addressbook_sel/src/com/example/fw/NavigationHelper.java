@@ -1,9 +1,6 @@
 package com.example.fw;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class NavigationHelper extends HelperBase {
 

@@ -1,15 +1,10 @@
 package com.example.tests;
-import static org.testng.Assert.assertEquals;
-
-import java.util.Collections;
-import java.util.List;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 
 import org.testng.annotations.Test;
 
 import com.example.utils.SortedListOf;
-
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThat;
 
 public class GroupCreationTests extends TestBase {
 	
@@ -27,8 +22,6 @@ public class GroupCreationTests extends TestBase {
 	    SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
 	    
 	    //merge states
-	    assertEquals(newList.size(), oldList.size()+1);
-	 
 	    
 	    assertThat(newList, equalTo(oldList.withAdded(group)));
 

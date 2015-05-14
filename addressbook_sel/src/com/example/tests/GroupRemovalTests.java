@@ -1,12 +1,13 @@
 package com.example.tests;
 
-import static org.testng.Assert.assertEquals;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
+
 import java.util.Random;
+
 import org.testng.annotations.Test;
+
 import com.example.utils.SortedListOf;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThat;
 
 
 public class GroupRemovalTests extends TestBase {

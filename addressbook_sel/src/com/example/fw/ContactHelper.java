@@ -1,17 +1,13 @@
 package com.example.fw;
 
-import static com.example.fw.ContactHelper.CREATION;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.example.tests.GroupData;
-import com.example.utils.SortedListOf;
 import com.example.tests.ContactData;
+import com.example.utils.SortedListOf;
 public class ContactHelper  extends HelperBase{
 	
 	public static boolean CREATION = true;
@@ -53,6 +49,26 @@ public ContactHelper createContact(ContactData contact, boolean formType) {
 	return this;
 }
 
+public ContactHelper modifyContact(int index, ContactData contact) {
+	manager.navigateTo().mainPage();
+	openEditPage(index);
+	fillContactDetails(contact, MODIFICATION);
+	updateContactCreation();
+	returnToMainPage();
+	rebuildCache(); 
+	return this;
+}
+
+
+public ContactHelper deleteContact(int index) {
+	manager.navigateTo().mainPage();
+	openEditPage(index);
+	deleteContactCreation();
+	returnToMainPage();
+	rebuildCache(); 
+	return this;
+	
+}
 	
 	//*************************************************
 
@@ -136,4 +152,8 @@ public ContactHelper createContact(ContactData contact, boolean formType) {
 		}
 
 	}
+
+
+
+
 }

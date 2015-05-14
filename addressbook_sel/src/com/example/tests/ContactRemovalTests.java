@@ -2,11 +2,11 @@ package com.example.tests;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 import org.testng.annotations.Test;
+
+import com.example.utils.SortedListOf;
 
 public class ContactRemovalTests extends TestBase {
 	
@@ -15,20 +15,18 @@ public class ContactRemovalTests extends TestBase {
 		app.navigateTo().mainPage();
 		
 	    //старый список - начало треша
-		   List<ContactData> oldList = app.getContactHelper().getContacts();
+		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
 		   Random rnd = new Random();
 		   int index = rnd.nextInt(oldList.size() - 1); 
 		   
-		app.getContactHelper().openEditPage(index);
-		app.getContactHelper().deleteContactCreation();
-		app.getContactHelper().returnToMainPage();
-		
-		  List<ContactData> newList = app.getContactHelper().getContacts();
+		   app.getContactHelper().deleteContact(index);    
+		   
+		   
+	
+		   SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 	    
 	    //merge states
-	    oldList.remove(index);
-	    Collections.sort(oldList);
-	    assertEquals(oldList,newList);
+		  assertEquals(newList,oldList.without(index));
 		
 		
 	  }

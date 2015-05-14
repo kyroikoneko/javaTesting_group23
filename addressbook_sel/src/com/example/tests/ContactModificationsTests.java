@@ -2,41 +2,30 @@ package com.example.tests;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 import org.testng.annotations.Test;
-import static com.example.fw.ContactHelper.MODIFICATION;;
+
+import com.example.utils.SortedListOf;
 
 public class ContactModificationsTests extends TestBase{
 	
 	  @Test(dataProvider = "randomValidContactGenerator")
 	  public void testContactModifications(ContactData contact) throws Exception {
-		app.navigateTo().mainPage();
+	
+		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
 		
-		   List<ContactData> oldList = app.getContactHelper().getContacts();
 		
-		  Random rnd = new Random();
+		Random rnd = new Random();
 		  int index = rnd.nextInt(oldList.size() - 1); 
-		app.getContactHelper().openEditPage(index);
+		  
+		  app.getContactHelper().modifyContact(index, contact);  
 
-
-		app.getContactHelper().fillContactDetails(contact, MODIFICATION);
-		
-		
-		app.getContactHelper().updateContactCreation();
-		app.getContactHelper().returnToMainPage();
-		
-		 // save new state
-	    List<ContactData> newList = app.getContactHelper().getContacts();
+		SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 	    
 	    //merge states
-	    oldList.remove(index); //удалился
-	    oldList.add(contact); //заменился новым
-	    Collections.sort(oldList); //
-	 //   Collections.sort(newList);//
-	    assertEquals(newList,oldList); 
+		
+		assertEquals(newList, oldList.without(index).withAdded(contact)); 
 		
 	  }
 
