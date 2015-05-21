@@ -41,10 +41,10 @@ public class GroupCreationTests extends TestBase {
 	    SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
 	    
 	    //merge states
-	    
+	 
 	    assertThat(newList, equalTo(oldList.withAdded(group)));
 
 	  }
 
 }
-//46.34
+//57.45

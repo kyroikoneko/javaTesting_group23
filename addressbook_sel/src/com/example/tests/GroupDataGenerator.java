@@ -1,57 +1,6 @@
 package com.example.tests;
 
-<<<<<<< HEAD
-import java.io.File;
-import java.util.List;
 
-public class GroupDataGenerator {
-
-	public static void main(String[] args) {
-
-	if (args.length <3)
-	{
-		System.out.println("Please specify parameters: <amount of test data> <file> <format>");
-	return;
-	}
-	
-	int amount = Integer.parseInt(args[0]);
-	File file = new File(args[1]);
-	String format = args[2];
-	
-	List<GroupData> groups = generateRandomGroups(amount);
-	if ("csv".equals(format)){
-		saveGroupsToCsvFile(groups, file);
-		}
-
-	else if("xml".equals(format)){
-		saveGroupsToXmlFile(groups, file);
-		}
-	else {
-		System.out.println("Unknown format"+ format);
-		return;
-		}
-	
-	}
-
-	private static void saveGroupsToXmlFile(List<GroupData> groups, File file) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void saveGroupsToCsvFile(List<GroupData> groups, File file) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static List<GroupData> generateRandomGroups(int amount) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-}
-
-
-=======
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -158,4 +107,4 @@ public class GroupDataGenerator {
 		return (List<GroupData>) xstream.fromXML(file);
 	}
 }// 30.09
->>>>>>> origin/master
+
