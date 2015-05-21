@@ -36,4 +36,17 @@ public class NavigationHelper extends HelperBase {
 		else {return false;
 		}
 	}
+	
+	public void phonePage() {
+		if(! onPhonesPage()){
+			click(By.linkText("print all"));
+			}
+	
+}
+
+	private boolean onPhonesPage() {
+		
+		return driver.getCurrentUrl().contains("view.php?all&print&phones");
+	}
+	//	http://localhost/addressbookv4.1.4/view.php?all&print&phones
 }
