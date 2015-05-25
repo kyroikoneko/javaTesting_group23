@@ -1,6 +1,7 @@
 package com.example.tests;
 
 import static com.example.tests.GroupDataGenerator.generateRandomGroups;
+import static com.example.tests.ContactDataGenerator.generateRandomContacts;
 
 import java.io.File;
 import java.io.FileReader;
@@ -21,14 +22,14 @@ public class TestBase {
 
 	@BeforeTest
 	public void setUp() throws Exception {
-		
-		
-		String configFile = System.getProperty("configFile","application.properties");
+
+		String configFile = System.getProperty("configFile",
+				"application.properties");
 		Properties properties = new Properties();
 		properties.load(new FileReader(new File(configFile)));
 		app = new ApplicationManager(properties);
 
-	}//1.11.00
+	}// 1.11.00
 
 	@AfterTest
 	public void tearDown() throws Exception {
@@ -51,42 +52,18 @@ public class TestBase {
 		return list;
 	}
 
-	@DataProvider
-	public Iterator<Object[]> randomValidContactGenerator() {
+	public List<Object[]> wrapContactsForDataProvider(List<ContactData> contacts) {
 		List<Object[]> list = new ArrayList<Object[]>();
-		// for(int i =0;i<1;i++){
-		// ContactData contact = new ContactData()
-		// .withName(generateRandomString(10))
-		// .withSecondName(generateRandomString(10))
-		// .withPostAddress(generateRandomString(20))
-		// .withHomePhoneNum(app.getContactHelper().phoneRandomizer())
-		// .withMobilePhonNum(app.getContactHelper().phoneRandomizer())
-		// .withWorkPhoneNum(app.getContactHelper().phoneRandomizer())
-		// .withPostPrimary(app.getContactHelper().emailRandomizer())
-		// .withPostSecondary(app.getContactHelper().emailRandomizer())
-		// .withDay("18")
-		// .withMonth("January")
-		// .withYear("1992")
-		// .withSecondaryPostAddress(generateRandomString(20))
-		// .withSecondaryPhone(app.getContactHelper().phoneRandomizer());
-		//
-		//
-		//
-		// list.add(new Object[]{contact});
-		// }
-		return list.iterator();
+		for (ContactData contact : contacts) {
+			list.add(new Object[] { contact });
+		}
+
+		return list;
 	}
 
-	// public String generateRandomString(int index)
-	// {
-	// Random rnd = new Random();
-	// if (rnd.nextInt(5)==0)
-	// {
-	// return "";
-	// }
-	// else{
-	// return app.getGroupHelper().CharacterRandomizer(index);
-	// }
-	//
-	// }
+	@DataProvider
+	public Iterator<Object[]> randomValidContactGenerator() {
+		 return wrapContactsForDataProvider(generateRandomContacts(5)).iterator(); 
+	}
+
 }
