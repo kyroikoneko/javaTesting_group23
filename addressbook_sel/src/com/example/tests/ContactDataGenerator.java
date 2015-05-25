@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.thoughtworks.xstream.XStream;
+
 import org.apache.commons.lang3.RandomStringUtils;
 
 
@@ -39,10 +41,24 @@ public class ContactDataGenerator {
 		}
 	}
 
-	private static void saveContactsToXmlFile(List<ContactData> contacts,
-			File file) {
-		
-	}
+	private static void saveContactsToXmlFile(List<ContactData> contacts, File file) throws IOException {  
+		XStream xstream = new XStream();
+		xstream.alias("contact", ContactData.class);
+		String xml = xstream.toXML(contacts);
+		FileWriter writer = new FileWriter(file);
+		writer.write(xml);
+		writer.close();
+  	}  
+	
+	
+	public static List<ContactData> loadContactsFromXmlFile(File file) throws IOException {  
+		XStream xstream = new XStream();  
+		xstream.alias("contact", ContactData.class);		 
+			return (List<ContactData>) xstream.fromXML(file);  
+	}  
+
+	
+
 
 	private static void saveContactsToCsvFile(List<ContactData> contacts, File file) throws IOException {
 		FileWriter writer = new FileWriter(file);
