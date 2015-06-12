@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import com.example.tests.GroupData;
 import com.example.utils.SortedListOf;
 
-public class GroupHelper extends WebDriverHelperBase {
+public class GroupHelper extends HelperBase {
 	
 	
 	
