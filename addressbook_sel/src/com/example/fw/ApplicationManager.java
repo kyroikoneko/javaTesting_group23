@@ -19,7 +19,7 @@ public class ApplicationManager {
 	this.properties = properties;
 	String browser =properties.getProperty("browser");
 	if("firefox".equals(browser)){
-	
+		driver= new FirefoxDriver();
 
 	}
 	else if ("ie".equals(browser)){
