@@ -4,11 +4,13 @@ public class GroupData implements Comparable<GroupData> {
 	private String groupName;
 	private String header;
 	private String footer;
+	private String id;
 
 	public GroupData(String groupName, String header, String footer) {
 		this.groupName = groupName;
 		this.header = header;
 		this.footer = footer;
+		
 	}
 	
 	public GroupData() {
@@ -55,6 +57,11 @@ public class GroupData implements Comparable<GroupData> {
 		this.groupName = groupName;
 		return this;
 	}
+	
+	public GroupData withId(String id) {
+		this.id = id;
+		return this;
+		}
 	
 	public GroupData withHeader(String header) {
 		this.header = header;

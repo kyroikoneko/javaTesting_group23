@@ -14,8 +14,9 @@ public class Sample {
 		Properties properties = new Properties();
 	    properties.load(new FileReader (new File( "application.properties")) );
 	    ApplicationManager app=new ApplicationManager(properties);
-	    JdbcHelper jdbs = new JdbcHelper(app, "jdbs:mysql://localhost/addressbook?user=root&password=");
-	    System.out.println(jdbs.listGroups());
+	   // JdbcHelper jdbs = new JdbcHelper(app, "jdbs:mysql://localhost/addressbook?user=root&password=");
+	  //  System.out.println(jdbs.listGroups());
+	    System.out.println(app.getHibernateHelper().listGroups());
 	
 
 		// String b = "+7(816)615-0899";
