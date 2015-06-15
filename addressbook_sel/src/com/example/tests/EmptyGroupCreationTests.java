@@ -4,6 +4,8 @@ import static org.testng.Assert.assertEquals;
 import java.util.Collections;
 import java.util.List;
 
+import com.example.utils.SortedListOf;
+
 public class EmptyGroupCreationTests extends TestBase {
 
 //@Test
@@ -12,7 +14,8 @@ public class EmptyGroupCreationTests extends TestBase {
     app.navigateTo().groupsPage();
     
     //save old state
-    List<GroupData> oldList = app.getGroupHelper().getGroups();
+	SortedListOf<GroupData> oldList = new SortedListOf<GroupData>(app.getHibernateHelper().listGroups());
+
 
     GroupData group = new GroupData("", "", ""); 
     app.getGroupHelper().initGroupCreation();
@@ -21,7 +24,7 @@ public class EmptyGroupCreationTests extends TestBase {
     app.getGroupHelper().returnToGroupPage();
     
     // save new state
-    List<GroupData> newList = app.getGroupHelper().getGroups();
+    List<GroupData> newList = app.getModel().getGroups();
     
     //merge states
     assertEquals(newList.size(), oldList.size()+1);

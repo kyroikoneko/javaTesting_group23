@@ -15,12 +15,12 @@ public class ApplicationManager {
 	private ContactHelper contactHelper;
 	private Properties properties;	
 	private HibernateHelper hibernateHelper;
-	
+	private ApplicationModel model;
 	
 	public ApplicationManager(Properties properties) {
 	this.properties = properties;
-	
-
+	model = new ApplicationModel();
+	model.setGroups(getHibernateHelper().listGroups());
 	}
 
 	public void stop() {
@@ -28,7 +28,10 @@ public class ApplicationManager {
 
 	}
 	
-	
+	public ApplicationModel getModel(){
+		return model;
+		
+	}
 	
 	//ленивая инициализация начало блока
 	public NavigationHelper navigateTo(){
@@ -93,6 +96,8 @@ public class ApplicationManager {
 		
 	}
 	
-	
+	public String getProperty(String key) {
+		return properties.getProperty(key);
+	} 
 	//ленивая инициализация конец кблока
 }

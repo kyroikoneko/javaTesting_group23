@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import com.example.fw.ApplicationManager;
-import com.example.fw.JdbcHelper;
 
 public class Sample {
 	public static void main (String[] args) throws FileNotFoundException, IOException{
