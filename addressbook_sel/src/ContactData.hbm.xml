@@ -3,19 +3,19 @@
 <hibernate-mapping>
 	<class name="com.example.tests.ContactData" table="addressbook">
 		<id name="id" column="id"></id>
-		<property name="firstName" column="firstname" </property>
-		<property name="secondName" column="lastname" </property>
-		<property name="postAddress" column="address" </property>
-		<property name="homePhoneNum" column="home" </property>
-		<property name="mobilePhonNum" column="mobile" </property>
-		<property name="workPhoneNum" column="work" </property>
-		<property name="postPrimary" column="email" </property>
-		<property name="postSecondary" column="email2" </property>
-		<property name="day" column="bday" </property>
-		<property name="month" column="bmonth" </property>
-		<property name="year" column="byear" </property>
-		<property name="secondaryPostAddress" column="address2" </property>
-		<property name="secondaryPhone" column="phone2" </property>
+		<property name="firstName" column="firstname"> </property>
+		<property name="secondName" column="lastname" ></property>
+		<property name="postAddress" column="address"> </property>
+		<property name="homePhoneNum" column="home"> </property>
+		<property name="mobilePhonNum" column="mobile"> </property>
+		<property name="workPhoneNum" column="work"> </property>
+		<property name="postPrimary" column="email" ></property>
+		<property name="postSecondary" column="email2"> </property>
+		<property name="day" column="bday"> </property>
+		<property name="month" column="bmonth"> </property>
+		<property name="year" column="byear"> </property>
+		<property name="secondaryPostAddress" column="address2" ></property>
+		<property name="secondaryPhone" column="phone2"> </property>
 	
 	</class>
 </hibernate-mapping>
