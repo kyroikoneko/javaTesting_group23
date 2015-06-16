@@ -1,5 +1,7 @@
 package com.example.tests;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 import static org.testng.Assert.assertEquals;
 
 import java.util.Random;
@@ -15,7 +17,7 @@ public class ContactRemovalTests extends TestBase {
 		app.navigateTo().mainPage();
 		
 	    //старый список - начало треша
-		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
+		SortedListOf<ContactData> oldList =  app.getModel().getContacts();
 		   Random rnd = new Random();
 		   int index = rnd.nextInt(oldList.size() - 1); 
 		   
@@ -23,11 +25,18 @@ public class ContactRemovalTests extends TestBase {
 		   
 		   
 	
-		   SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
+		   SortedListOf<ContactData> newList =  app.getModel().getContacts();
 	    
 	    //merge states
 		  assertEquals(newList,oldList.without(index));
-		
+		  if (wantToCheck()) {
+				if ("yes".equals(app.getProperty("check.db"))) {
+					assertThat(app.getModel().getContacts(), equalTo(app.getHibernateHelper().listContacts()));
+				}
+				if ("yes".equals(app.getProperty("check.ui"))) {
+					assertThat(app.getModel().getContacts(), equalTo(app.getContactHelper().getUIContacts()));
+				}
+			}
 		
 	  }
 

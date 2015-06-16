@@ -17,25 +17,19 @@ public class ContactHelper  extends WebDriverHelperBase{
 		super(manager);
 	}
 	
-	private SortedListOf<ContactData> cachedContacts; 
-  
- 	public SortedListOf<ContactData> getContacts() { 
- 		if(cachedContacts == null) { 
- 			rebuildCache(); 
- 		} 
- 		return cachedContacts; 
- 	} 
 
-private void rebuildCache() { 
- 		cachedContacts = new SortedListOf<ContactData>(); 
+
+	public SortedListOf<ContactData> getUIContacts() { 
+	SortedListOf<ContactData> contacts = new SortedListOf<ContactData>(); 
  		 
  		manager.navigateTo().mainPage(); 
  		List<WebElement> secondNames = driver.findElements(By.xpath("//tr[@name='entry']/td[2]"));
 		for (WebElement secondName : secondNames) {
 		
 		 String lastName = secondName.getText();
-		 cachedContacts.add(new ContactData().withSecondName(lastName));
- 		}		 
+		 contacts.add(new ContactData().withSecondName(lastName));
+ 		}	
+		return contacts;
  	} 
 
 	
@@ -45,7 +39,8 @@ public ContactHelper createContact(ContactData contact, boolean formType) {
 	fillContactDetails(contact, CREATION);
 	submitContactCreation();
 	returnToMainPage();
-	rebuildCache(); 
+	//update model
+	manager.getModel().addContact(contact);
 	return this;
 }
 
@@ -55,7 +50,8 @@ public ContactHelper modifyContact(int index, ContactData contact) {
 	fillContactDetails(contact, MODIFICATION);
 	updateContactCreation();
 	returnToMainPage();
-	rebuildCache(); 
+	//update model
+	manager.getModel().removeContact(index).addContact(contact);
 	return this;
 }
 
@@ -65,7 +61,8 @@ public ContactHelper deleteContact(int index) {
 	openEditPage(index);
 	deleteContactCreation();
 	returnToMainPage();
-	rebuildCache(); 
+	//update model
+	manager.getModel().removeContact(index);
 	return this;
 	
 }
