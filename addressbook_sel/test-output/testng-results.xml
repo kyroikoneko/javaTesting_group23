@@ -1,131 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="10" passed="10">
+<testng-results skipped="5" failed="0" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38160" started-at="2015-06-15T19:14:14Z" finished-at="2015-06-15T19:14:52Z">
+  <suite name="Default suite" duration-ms="343" started-at="2015-06-16T19:38:44Z" finished-at="2015-06-16T19:38:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38160" started-at="2015-06-15T19:14:14Z" finished-at="2015-06-15T19:14:52Z">
-      <class name="com.example.tests.GroupCreationTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="setUp" is-config="true" duration-ms="7" started-at="2015-06-15T23:14:14Z" finished-at="2015-06-15T23:14:14Z">
+    <test name="Default test" duration-ms="343" started-at="2015-06-16T19:38:44Z" finished-at="2015-06-16T19:38:45Z">
+      <class name="com.example.tests.ContactCreationTests">
+        <test-method status="FAIL" signature="setUp()[pri:0, instance:com.example.tests.ContactCreationTests@50cbc42f]" name="setUp" is-config="true" duration-ms="0" started-at="2015-06-16T23:38:44Z" finished-at="2015-06-16T23:38:44Z">
+          <exception class="java.lang.ExceptionInInitializerError">
+            <full-stacktrace>
+              <![CDATA[java.lang.ExceptionInInitializerError
+	at com.example.fw.HibernateUtil.buildSessionFactory(HibernateUtil.java:18)
+	at com.example.fw.HibernateUtil.<clinit>(HibernateUtil.java:8)
+	at com.example.fw.HibernateHelper.listGroups(HibernateHelper.java:19)
+	at com.example.fw.ApplicationManager.<init>(ApplicationManager.java:23)
+	at com.example.tests.TestBase.setUp(TestBase.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.hibernate.InvalidMappingException: Unable to read XML
+	at org.hibernate.internal.util.xml.MappingReader.legacyReadMappingDocument(MappingReader.java:375)
+	at org.hibernate.internal.util.xml.MappingReader.readMappingDocument(MappingReader.java:304)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:518)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:514)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:688)
+	at org.hibernate.cfg.Configuration.addResource(Configuration.java:771)
+	at org.hibernate.cfg.Configuration.parseMappingElement(Configuration.java:2257)
+	at org.hibernate.cfg.Configuration.parseSessionFactory(Configuration.java:2229)
+	at org.hibernate.cfg.Configuration.doConfigure(Configuration.java:2209)
+	at org.hibernate.cfg.Configuration.doConfigure(Configuration.java:2162)
+	at org.hibernate.cfg.Configuration.configure(Configuration.java:2077)
+	at org.hibernate.cfg.Configuration.configure(Configuration.java:2056)
+	at com.example.fw.HibernateUtil.buildSessionFactory(HibernateUtil.java:13)
+	... 26 more
+Caused by: org.dom4j.DocumentException: Error on line 6 of document  : Element type "property" must be followed by either attribute specifications, ">" or "/>". Nested exception: Element type "property" must be followed by either attribute specifications, ">" or "/>".
+	at org.dom4j.io.SAXReader.read(SAXReader.java:482)
+	at org.hibernate.internal.util.xml.MappingReader.legacyReadMappingDocument(MappingReader.java:325)
+	... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ExceptionInInitializerError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="10732" started-at="2015-06-15T23:14:14Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:25Z">
+        <test-method status="SKIP" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@50cbc42f]" name="testContactCreation" duration-ms="0" started-at="2015-06-16T23:38:45Z" data-provider="randomValidContactGenerator" finished-at="2015-06-16T23:38:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [groupName=test477724508, header=test-66079428, footer=test-942804369]]]>
+                <![CDATA[com.example.tests.ContactData@f32ce91b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="2805" started-at="2015-06-15T23:14:25Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:28Z">
+        </test-method> <!-- testContactCreation -->
+        <test-method status="SKIP" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@50cbc42f]" name="testContactCreation" duration-ms="0" started-at="2015-06-16T23:38:45Z" data-provider="randomValidContactGenerator" finished-at="2015-06-16T23:38:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [groupName=, header=test42120732, footer=test195121038]]]>
+                <![CDATA[com.example.tests.ContactData@1f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="3029" started-at="2015-06-15T23:14:28Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:31Z">
+        </test-method> <!-- testContactCreation -->
+        <test-method status="SKIP" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@50cbc42f]" name="testContactCreation" duration-ms="1" started-at="2015-06-16T23:38:45Z" data-provider="randomValidContactGenerator" finished-at="2015-06-16T23:38:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [groupName=test442874063, header=test-558671647, footer=test1468349720]]]>
+                <![CDATA[com.example.tests.ContactData@1fb0f989]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="2908" started-at="2015-06-15T23:14:31Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:34Z">
+        </test-method> <!-- testContactCreation -->
+        <test-method status="SKIP" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@50cbc42f]" name="testContactCreation" duration-ms="0" started-at="2015-06-16T23:38:45Z" data-provider="randomValidContactGenerator" finished-at="2015-06-16T23:38:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [groupName=test1202180041, header=test-39099121, footer=test-1370022294]]]>
+                <![CDATA[com.example.tests.ContactData@6ef5ba29]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="2951" started-at="2015-06-15T23:14:34Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:37Z">
+        </test-method> <!-- testContactCreation -->
+        <test-method status="SKIP" signature="testContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTests@50cbc42f]" name="testContactCreation" duration-ms="0" started-at="2015-06-16T23:38:45Z" data-provider="randomValidContactGenerator" finished-at="2015-06-16T23:38:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [groupName=, header=test-737352689, footer=test1538574376]]]>
+                <![CDATA[com.example.tests.ContactData@4d0e4fea]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="2943" started-at="2015-06-15T23:14:37Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupData [groupName=test-1613997609, header=test96914755, footer=]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="3070" started-at="2015-06-15T23:14:40Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:43Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupData [groupName=test-443757182, header=test356524789, footer=test-1333296635]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="3043" started-at="2015-06-15T23:14:43Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupData [groupName=test-1000536786, header=, footer=test-2020929282]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="3188" started-at="2015-06-15T23:14:46Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupData [groupName=test449103013, header=test1218369377, footer=test-1556358135]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="testGroupCreationWithValidData" duration-ms="3129" started-at="2015-06-15T23:14:49Z" data-provider="groupsFromFile" finished-at="2015-06-15T23:14:52Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupData [groupName=test705258962, header=test-2069324701, footer=]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.GroupCreationTests@50cbc42f]" name="tearDown" is-config="true" duration-ms="152" started-at="2015-06-15T23:14:52Z" finished-at="2015-06-15T23:14:52Z">
+        </test-method> <!-- testContactCreation -->
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.example.tests.ContactCreationTests@50cbc42f]" name="tearDown" is-config="true" duration-ms="0" started-at="2015-06-16T23:38:45Z" finished-at="2015-06-16T23:38:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.example.tests.GroupCreationTests -->
+      </class> <!-- com.example.tests.ContactCreationTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

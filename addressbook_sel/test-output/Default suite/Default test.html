@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>10/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/5</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jun 15 23:14:14 MUT 2015</td>
+<td>Started on:</td><td>Tue Jun 16 23:38:44 MUT 2015</td>
 </tr>
-<tr><td>Total time:</td><td>38 seconds (38160 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (343 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,63 +67,159 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=test477724508, header=test-66079428, footer=test-942804369]</td>
-<td></td>
-<td>10</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
+<td title='com.example.tests.ContactCreationTests.setUp()'><b>setUp</b><br>Test class: com.example.tests.ContactCreationTests</td>
+<td><div><pre>java.lang.ExceptionInInitializerError
+	at com.example.fw.HibernateUtil.buildSessionFactory(HibernateUtil.java:18)
+	at com.example.fw.HibernateUtil.&lt;clinit&gt;(HibernateUtil.java:8)
+	at com.example.fw.HibernateHelper.listGroups(HibernateHelper.java:19)
+	at com.example.fw.ApplicationManager.&lt;init&gt;(ApplicationManager.java:23)
+	at com.example.tests.TestBase.setUp(TestBase.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.hibernate.InvalidMappingException: Unable to read XML
+	at org.hibernate.internal.util.xml.MappingReader.legacyReadMappingDocument(MappingReader.java:375)
+	at org.hibernate.internal.util.xml.MappingReader.readMappingDocument(MappingReader.java:304)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:518)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:514)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:688)
+	at org.hibernate.cfg.Configuration.addResource(Configuration.java:771)
+	at org.hibernate.cfg.Configuration.parseMappingElement(Configuration.java:2257)
+	at org.hibernate.cfg.Configuration.parseSessionFactory(Configuration.java:2229)
+	at org.hibernate.cfg.Configuration.doConfigure(Configuration.java:2209)
+	at org.hibernate.cfg.Configuration.doConfigure(Configuration.java:2162)
+	at org.hibernate.cfg.Configuration.configure(Configuration.java:2077)
+	at org.hibernate.cfg.Configuration.configure(Configuration.java:2056)
+	at com.example.fw.HibernateUtil.buildSessionFactory(HibernateUtil.java:13)
+	... 26 more
+Caused by: org.dom4j.DocumentException: Error on line 6 of document  : Element type &quot;property&quot; must be followed by either attribute specifications, &quot;&gt;&quot; or &quot;/&gt;&quot;. Nested exception: Element type &quot;property&quot; must be followed by either attribute specifications, &quot;&gt;&quot; or &quot;/&gt;&quot;.
+	at org.dom4j.io.SAXReader.read(SAXReader.java:482)
+	at org.hibernate.internal.util.xml.MappingReader.legacyReadMappingDocument(MappingReader.java:325)
+	... 38 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace1912962767", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1912962767'><pre>java.lang.ExceptionInInitializerError
+	at com.example.fw.HibernateUtil.buildSessionFactory(HibernateUtil.java:18)
+	at com.example.fw.HibernateUtil.&lt;clinit&gt;(HibernateUtil.java:8)
+	at com.example.fw.HibernateHelper.listGroups(HibernateHelper.java:19)
+	at com.example.fw.ApplicationManager.&lt;init&gt;(ApplicationManager.java:23)
+	at com.example.tests.TestBase.setUp(TestBase.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.hibernate.InvalidMappingException: Unable to read XML
+	at org.hibernate.internal.util.xml.MappingReader.legacyReadMappingDocument(MappingReader.java:375)
+	at org.hibernate.internal.util.xml.MappingReader.readMappingDocument(MappingReader.java:304)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:518)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:514)
+	at org.hibernate.cfg.Configuration.add(Configuration.java:688)
+	at org.hibernate.cfg.Configuration.addResource(Configuration.java:771)
+	at org.hibernate.cfg.Configuration.parseMappingElement(Configuration.java:2257)
+	at org.hibernate.cfg.Configuration.parseSessionFactory(Configuration.java:2229)
+	at org.hibernate.cfg.Configuration.doConfigure(Configuration.java:2209)
+	at org.hibernate.cfg.Configuration.doConfigure(Configuration.java:2162)
+	at org.hibernate.cfg.Configuration.configure(Configuration.java:2077)
+	at org.hibernate.cfg.Configuration.configure(Configuration.java:2056)
+	at com.example.fw.HibernateUtil.buildSessionFactory(HibernateUtil.java:13)
+	... 26 more
+Caused by: org.dom4j.DocumentException: Error on line 6 of document  : Element type &quot;property&quot; must be followed by either attribute specifications, &quot;&gt;&quot; or &quot;/&gt;&quot;. Nested exception: Element type &quot;property&quot; must be followed by either attribute specifications, &quot;&gt;&quot; or &quot;/&gt;&quot;.
+	at org.dom4j.io.SAXReader.read(SAXReader.java:482)
+	at org.hibernate.internal.util.xml.MappingReader.legacyReadMappingDocument(MappingReader.java:325)
+	... 38 more
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=, header=test42120732, footer=test195121038]</td>
+<td title='com.example.tests.ContactCreationTests.tearDown()'><b>tearDown</b><br>Test class: com.example.tests.ContactCreationTests</td>
 <td></td>
-<td>2</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=test442874063, header=test-558671647, footer=test1468349720]</td>
+<td title='com.example.tests.ContactCreationTests.testContactCreation()'><b>testContactCreation</b><br>Test class: com.example.tests.ContactCreationTests<br>Parameters: com.example.tests.ContactData@f32ce91b</td>
 <td></td>
-<td>3</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
+<td>0</td>
+<td>com.example.tests.ContactCreationTests@50cbc42f</td></tr>
 <tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=test1202180041, header=test-39099121, footer=test-1370022294]</td>
+<td title='com.example.tests.ContactCreationTests.testContactCreation()'><b>testContactCreation</b><br>Test class: com.example.tests.ContactCreationTests<br>Parameters: com.example.tests.ContactData@1f</td>
 <td></td>
-<td>2</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
+<td>0</td>
+<td>com.example.tests.ContactCreationTests@50cbc42f</td></tr>
 <tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=, header=test-737352689, footer=test1538574376]</td>
+<td title='com.example.tests.ContactCreationTests.testContactCreation()'><b>testContactCreation</b><br>Test class: com.example.tests.ContactCreationTests<br>Parameters: com.example.tests.ContactData@1fb0f989</td>
 <td></td>
-<td>2</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
+<td>0</td>
+<td>com.example.tests.ContactCreationTests@50cbc42f</td></tr>
 <tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=test-1613997609, header=test96914755, footer=]</td>
+<td title='com.example.tests.ContactCreationTests.testContactCreation()'><b>testContactCreation</b><br>Test class: com.example.tests.ContactCreationTests<br>Parameters: com.example.tests.ContactData@6ef5ba29</td>
 <td></td>
-<td>2</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
+<td>0</td>
+<td>com.example.tests.ContactCreationTests@50cbc42f</td></tr>
 <tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=test-443757182, header=test356524789, footer=test-1333296635]</td>
+<td title='com.example.tests.ContactCreationTests.testContactCreation()'><b>testContactCreation</b><br>Test class: com.example.tests.ContactCreationTests<br>Parameters: com.example.tests.ContactData@4d0e4fea</td>
 <td></td>
-<td>3</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
-<tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=test-1000536786, header=, footer=test-2020929282]</td>
-<td></td>
-<td>3</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
-<tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=test449103013, header=test1218369377, footer=test-1556358135]</td>
-<td></td>
-<td>3</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
-<tr>
-<td title='com.example.tests.GroupCreationTests.testGroupCreationWithValidData()'><b>testGroupCreationWithValidData</b><br>Test class: com.example.tests.GroupCreationTests<br>Parameters: GroupData [groupName=test705258962, header=test-2069324701, footer=]</td>
-<td></td>
-<td>3</td>
-<td>com.example.tests.GroupCreationTests@50cbc42f</td></tr>
+<td>0</td>
+<td>com.example.tests.ContactCreationTests@50cbc42f</td></tr>
 </table><p>
 </body>
 </html>
